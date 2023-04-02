@@ -11,7 +11,7 @@ class tea:
         print("HasCaffeine: " + self.caffeine)
 
 
-    def __init__(self, name:str, category:str, feeling:str, diseases:list, regions:list, rare:bool, caffeine:bool, description:str, link:str):
+    def __init__(self, name:str, category:str, feeling:str, diseases:list, regions:list, rare:bool, caffeine:bool, description:str, link:str, pubmed:str):
 
         self.name = name
         self.category = category
@@ -23,5 +23,6 @@ class tea:
         self.imageName = name + ".png"
         self.description = description
         self.link = link
+        self.pubmed = pubmed
 
 

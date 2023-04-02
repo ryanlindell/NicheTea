@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import teadata, tea
+import teadata, tea, random
 
 app = Flask(__name__)
 
@@ -28,13 +28,13 @@ def tea_rec_page():
     td = teadata.TeaData()
     
     full_tea_list = teadata.import_tea()
-    full_tea_list.__delitem__(0);
+    full_tea_list.__delitem__(0)
 
     normal_tea_list = []
     rare_tea_list = []
 
     for tea in full_tea_list:
-        if tea.rare == "rare":
+        if tea.rare == "niche":
             rare_tea_list.append(tea)
         else:
             normal_tea_list.append(tea)
@@ -97,7 +97,7 @@ def tea_rec_page():
     if len(rare_tea_list) == 0:
         rare_tea_list = [teadata.blank_tea]
 
-    tea1 = normal_tea_list[0]
-    tea2 = rare_tea_list[0]
+    tea1 = random.choice(normal_tea_list)
+    tea2 = random.choice(rare_tea_list)
 
     return render_template('tearec.html', td=td, tea1=tea1, tea2=tea2)

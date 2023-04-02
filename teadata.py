@@ -1,6 +1,6 @@
 import csv, tea
 
-blank_tea = tea.tea('No Tea Found!', '?', '?', ['?'], ["?"], '?', "?")
+blank_tea = tea.tea('No Tea Found', '?', '?', ['?'], ["?"], '?', "?", "?", '?')
 
 def import_tea():
 
@@ -8,10 +8,10 @@ def import_tea():
 
         with open('teadata.csv', newline='') as csvfile:
             teareader = csv.reader(csvfile, skipinitialspace=True)
-            for Name, Category, Feeling, Diseases, Regions, Rare, Caffenie in teareader:
+            for Name, Category, Feeling, Diseases, Regions, Rare, Caffenie, Description, Link in teareader:
                 # tea_list.append(str.split(row))
                 # tea_list.append([Name, Category, Feeling, Diseases.split(','), Regions.split(','), Rare, Caffenie])
-                next_tea = tea.tea(Name, Category, Feeling, Diseases.split(','), Regions.split(','), Rare, (Caffenie == 'checked'))
+                next_tea = tea.tea(Name, Category, Feeling, Diseases.split(','), Regions.split(','), Rare, (Caffenie == 'checked'), Description, Link)
                 tea_list.append(next_tea)
                 # print(', '.join(row))
         

@@ -50,9 +50,9 @@
         <div class="card-body">
           <h5 class="card-title">{{tea1.name}}</h5>
           <h6 class="card-text">Feeling: {{tea1.feeling}}</h6>
-          <h6 class="card-text">Regions: {{tea1.regions}}</h6>
-          <h6 class="card-text">Conditions: {{tea1.diseases}}</h6>
-          <h6 class="card-text">Caffeine: {{tea1.caffeine}}</h6>
+          <h6 class="card-text">Regions: {{tea1.getFormattedRegions()}}</h6>
+          <h6 class="card-text">Conditions: {{tea1.getFormattedDiseases()}}</h6>
+          <h6 class="card-text">{{tea1.getFormattedCaffeine()}}</h6>
           <p class="card-text">{{tea1.description}}</p>
           <a href="{{tea1.link}}" class="btn btn-warning">Buy this tea</a>
           <a href="{{tea1.pubmed}}" class="btn btn-primary">Search PubMed</a>
@@ -66,9 +66,9 @@
         <div class="card-body">
           <h5 class="card-title">{{tea2.name}}</h5>
           <h6 class="card-text">Feeling: {{tea2.feeling}}</h6>
-          <h6 class="card-text">Regions: {{tea2.regions}}</h6>
-          <h6 class="card-text">Conditions: {{tea2.diseases}}</h6>
-          <h6 class="card-text">Caffeine: {{tea2.caffeine}}</h6>
+          <h6 class="card-text">Regions: {{tea2.getFormattedRegions()}}</h6>
+          <h6 class="card-text">Conditions: {{tea2.getFormattedDiseases()}}</h6>
+          <h6 class="card-text">{{tea2.getFormattedCaffeine()}}</h6>
           <p class="card-text">{{tea2.description}}</p>
           <a href="{{tea2.link}}" class="btn btn-warning">By this tea</a>
           <a href="{{tea2.pubmed}}" class="btn btn-primary">Search PubMed</a>

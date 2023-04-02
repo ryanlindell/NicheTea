@@ -64,7 +64,7 @@ def tea_rec_page():
             tmp_list.append(tea)
     rare_tea_list = tmp_list
 
-    # filter by feeling
+    # filter by caffeine
     tmp_list = []
     for tea in normal_tea_list:
         if tea.caffeine == hasCaffeine:

@@ -10,6 +10,17 @@ class tea:
         print("IsRare: " + self.rare)
         print("HasCaffeine: " + self.caffeine)
 
+    def getFormattedRegions(self):
+        return ', '.join(self.regions)
+
+    def getFormattedDiseases(self):
+        return ', '.join(self.diseases)
+
+    def getFormattedCaffeine(self):
+        if self.caffeine:
+            return 'Contains Caffeine'
+        else:
+            return "Doesn't Contain Caffeine"
 
     def __init__(self, name:str, category:str, feeling:str, diseases:list, regions:list, rare:bool, caffeine:bool, description:str, link:str, pubmed:str):
 

@@ -19,6 +19,12 @@ def hello_world():
 
     return render_template('index.html', td=td)
 
+@app.route("/info", methods=['GET', 'POST'])
+def info_page():
+
+    return render_template('info.html')
+
+
 @app.route("/tea", methods=['GET', 'POST'])
 def tea_rec_page():
 

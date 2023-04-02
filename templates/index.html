@@ -1,4 +1,11 @@
 <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NicheTea</title>
+    <link rel="icon" href="../static/favicon-32x32.png" type="image/x-icon">
+ </head>
+
   <body style="background-image: url('static/viens2.png');">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -6,7 +13,6 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 
   <style>
     .center {
@@ -32,22 +38,31 @@
 
     <img src="static/Niche Tea 2.png" class="mx-auto my-2 center" alt="Responsive image"/>
 
-    <h4 class="text-center bold c2">Seach by:</h4>
+    <h4 class="text-center bold c2">Find Your Tea!</h4>
 
     <br/>
 
     <div class="mx-auto" style="width: 400px;">
       <form action="/tea" method="get">
-        <div class="form-group bold c2"> 
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="caffeine" name="caffeine">
-            <label class="form-check-label" for="caffeine">
-              Contains Caffeine
-            </label>
-          </div>
-
+        
+        <div class="form-group bold c2">
+          <label for="condition">Condition:</label>
+          <select class="form-control" name="condition" id="condition" method="get" value="">
+            {% for i in range(93) %}
+                <option value="{{td.conditions[i]}}">{{td.conditions[i]}}</option>
+            {% endfor %}
+          </select>
         </div>
+
+        <div class="form-group bold c2">
+          <label for="feeling">Feeling:</label>
+          <select class="form-control" name="feeling" id="feeling" method="get" value="">
+            {% for i in range(7) %}
+                <option value="{{td.feelings[i]}}">{{td.feelings[i]}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
         <div class="form-group bold c2">
           <label for="region">Region:</label>
           <select class="form-control" name="region" method="get" id="region" value="">
@@ -56,27 +71,16 @@
             {% endfor %}
           </select>
         </div>
-          
-        <div class="form-group bold c2">
-          <label for="feeling">Feeling:</label>
-          <select class="form-control" name="feeling" id="feeling" method="get" value="">
-            {% for i in range(7) %}
-                <option value="{{td.feelings[i]}}">{{td.feelings[i]}}</option>
-            {% endfor %}
-          </select>
-          
-        </div>
-        <div class="form-group bold c2">
-          <label for="condition">Condition:</label>
-          <select class="form-control" name="condition" id="condition" method="get" value="">
-            {% for i in range(93) %}
-                <option value="{{td.conditions[i]}}">{{td.conditions[i]}}</option>
-            {% endfor %}
-          </select>
-        
-        </div>
-        
 
+        <div class="form-group bold c2"> 
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="caffeine" name="caffeine">
+            <label class="form-check-label" for="caffeine">
+              Caffeine?
+            </label>
+          </div>
+        </div>
+        
       
       <br/>
         <div class="row">
@@ -85,7 +89,6 @@
               <input class="btn btn-success btn-block mx-auto" type="submit" value="Give Me Tea!!!">
           </div>
         </div>
-      
       </form>
     </div>
 

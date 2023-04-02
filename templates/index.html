@@ -1,0 +1,54 @@
+<html>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <div class="row">
+    <h1 class="text-center">NicheTea - Home: </h1>
+    
+    <hr/>
+
+    <form action="/tea" method="get">
+      <div class="row">
+        <div class="col-sm-2 text-center"> <b>Seach by:</b> </div>
+        <div class="col-sm-2 text-center">Caffeine: <input class="form-check-input" type="checkbox" name="caffeine"></div>
+        <div class="col-sm-2 text-center">Region: <select class="" name="region" method="get" value="">
+          {% for i in range(7) %}
+              <option value="{{td.regions[i]}}">{{td.regions[i]}}</option>
+          {% endfor %}
+        </select>
+        </div>
+        <div class="col-sm-2 text-center">Feeling: <select class="" name="feeling" method="get" value="">
+          {% for i in range(7) %}
+              <option value="{{td.feelings[i]}}">{{td.feelings[i]}}</option>
+          {% endfor %}
+          </select>
+        </div>
+        <div class="col-sm-2 text-center">Condition: <select class="" name="condition" method="get" value="">
+          {% for i in range(5) %}
+              <option value="{{td.conditions[i]}}">{{td.conditions[i]}}</option>
+          {% endfor %}
+        </select>
+        </div>
+      </div>
+
+    
+    <br/>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <input class="btn btn-primary btn-block mx-auto" type="submit" value="Give Me Tea!!!">
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <hr/>
+
+  
+</html>

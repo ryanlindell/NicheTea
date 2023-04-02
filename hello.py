@@ -7,6 +7,16 @@ app = Flask(__name__)
 def hello_world():
     td = teadata.TeaData()
 
+    full_tea_list = teadata.import_tea()
+    full_tea_list.__delitem__(0)
+    for tea in full_tea_list:
+        for condition in tea.diseases:
+            td.conditions.add(condition)
+    td.conditions = list(td.conditions)
+    td.conditions.sort()
+    td.conditions.insert(0, 'any')
+
+
     return render_template('index.html', td=td)
 
 @app.route("/tea", methods=['GET', 'POST'])
@@ -26,6 +36,8 @@ def tea_rec_page():
         #print(hasCaffeine + region + feeling + condition)
 
     td = teadata.TeaData()
+
+    
     
     full_tea_list = teadata.import_tea()
     full_tea_list.__delitem__(0)

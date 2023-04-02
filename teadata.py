@@ -30,7 +30,7 @@ class TeaData:
     feelings = ["any", "calming", "energy", "warm", "detox", "sleep", "cognition", "immune"]
     # conditions = ["any"]
     conditions = set()
-    conditions.add('any')
+    
     regions = ["any", "asia", "europe", "africa", "south america", "north america", "australia"]
 
     

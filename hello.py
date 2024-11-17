@@ -119,3 +119,6 @@ def tea_rec_page():
     tea2 = random.choice(rare_tea_list)
 
     return render_template('tearec.html', td=td, tea1=tea1, tea2=tea2)
+
+
+print('hello world')
